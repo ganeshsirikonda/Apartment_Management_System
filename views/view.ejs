@@ -1,0 +1,35 @@
+<%- include("header") -%>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Flat_No</th>
+        <th scope="col">DUE</th>
+      </tr>
+    </thead>
+
+
+<% let i=0 %>
+
+<%    personsList.forEach(function(persons) { %>
+<% i=i+1 %>
+
+        <tbody>
+          <tr>
+            <th scope="row"><%=i%></th>
+            <td><%=  persons.name  %></td>
+            <td><%=  persons.flat_no  %></td>
+            <td><%=  persons.due  %></td>
+          </tr>
+        </tbody>
+
+<%   }) %>
+</table>
+
+<form action="/options" method="post">
+    <button type="submit" class="btn btn-primary" name="" value="">go to options</button>
+</form>
+
+<%- include("footer") -%>
